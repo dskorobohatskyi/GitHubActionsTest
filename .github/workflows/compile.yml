@@ -13,19 +13,8 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Process cwd
-      run: dir
-    # - name: setup-msbuild
     - uses: microsoft/setup-msbuild@v1
-    # - name: Build app for release
-      # run: msbuild src\YourProjectFile.csproj -t:rebuild -verbosity:diag -property:Configuration=Release
-    # - name: run
-      # run: |
-        # spark.exe test.spark
-      # shell: cmd
-    # - name: upload executable
-    #   uses: actions/upload-artifact@v2
-    #   with:
-    #     name: windows
-    #     path: |
-    #       spark.exe
+    - name: Build app for release
+      run: msbuild src\TestProject.vcxproj -t:rebuild -verbosity:diag -property:Configuration=Release
+    - name: Build app for debug
+      run: msbuild src\TestProject.vcxproj -t:rebuild -verbosity:diag -property:Configuration=Debug
