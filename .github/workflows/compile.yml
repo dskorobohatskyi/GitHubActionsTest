@@ -19,5 +19,5 @@ jobs:
     - name: Build app for debug
       run: msbuild src\TestProject.vcxproj -t:rebuild -verbosity:normal -property:Configuration=Debug
     - name: Run app
-      run: x64\Release\TestProject.exe
+      run: src\Release\TestProject.exe
       shell: cmd
