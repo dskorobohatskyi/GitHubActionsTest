@@ -8,5 +8,5 @@ int main()
     std::cout << "Hello World!\n";
     // obviously broken code
 
-    return -1;
+    return 0;
 }
